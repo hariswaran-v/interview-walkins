@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
 
-const FromTextarea = ({ name, type, placeholder, register, error }) => {
+const FromTextarea = ({ label, name, type, placeholder, register, error }) => {
   return (
     <div>
+      <label htmlFor={name} className="block mb-1 font-semibold">
+        {label}
+      </label>
       <textarea
         name={name}
         type={type}
@@ -16,6 +19,7 @@ const FromTextarea = ({ name, type, placeholder, register, error }) => {
 };
 
 FromTextarea.propTypes = {
+  label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,

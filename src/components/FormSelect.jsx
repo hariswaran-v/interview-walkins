@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
 
-const FormSelect = ({ name, register, error }) => {
+const FormSelect = ({ label, name, register, error }) => {
   return (
     <div>
+      <label htmlFor={name} className="block mb-1 font-semibold">
+        {label}
+      </label>
       <select
         name={name}
         id="jobRole"
@@ -21,6 +24,7 @@ const FormSelect = ({ name, register, error }) => {
 };
 
 FormSelect.propTypes = {
+  label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   register: PropTypes.object.isRequired,
   error: PropTypes.object.isRequired,
